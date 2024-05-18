@@ -1,0 +1,4 @@
+.venv
+pet
+__pycache__
+pyproject.toml

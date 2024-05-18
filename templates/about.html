@@ -191,19 +191,19 @@
                 <div>
                     <li>
                         <i class="fal fa-map"></i>
-                        <p>Swoyambhu, Kathmandu</p>
+                        <p>{{context.address}}</p>
                     </li>
                     <li>
                         <i class="fal fa-envelope"></i>
-                        <p>pawsitivepetcare@gmail.com</p>
+                        <p>{{context.email}}</p>
                     </li>
                     <li>
                         <i class="fal fa-phone-alt"></i>
-                        <p>01-4890891</p>
+                        <p>{{context.phone}}</p>
                     </li>
                     <li>
                         <i class="fal fa-clock"></i>
-                        <p>Sun-Fri, 9am-6pm</p>
+                        <p>{{context.open_time}}</p>
                     </li>
                 </div>
             </div>
@@ -219,6 +219,7 @@
         </div>
     </div>
     <script>
+    let dogs = {{context.dogs | safe}}
     let cur_index = 0
     let leftarrow = document.querySelector(".leftarrow");
     let rightarrow = document.querySelector(".rightarrow");
@@ -228,12 +229,12 @@
                 </figcaption>`;
     let parent = document.querySelector('.testimonial')         
     let testomonies = [];
-    for (var i = 0; i <10; i++) {
+    dogs.forEach(x=>{
         let elm =  document.createElement("figure")
         elm.className="snip1390"
-        elm.innerHTML = testomoy.replace("{img}","/static/img/bassethound.jpg").replace('{quote}',`hello${i}`);
+        elm.innerHTML = testomoy.replace("{img}","/static/img/bassethound.jpg").replace('{quote}',`[${x.name}] ${x.desc}`);
         testomonies.push(elm)
-    }
+    })
 
 
   rightarrow.addEventListener("click",()=>{

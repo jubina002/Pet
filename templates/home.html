@@ -129,37 +129,18 @@
         </div>
 
         <section id="feature" class="section-p1">
-            <a href=""><div class="dog-item">
+            {% if context %}
+            {% for dog in context.dogs %}
+            <a href="/adopt/{{dog._id}}">
+                <div class="dog-item">
                 <img src="/static/img/bassethound.jpg" alt="Dog 1">
-                <p>Basset Hound</p>
+                <p>
+                {{dog.name}}
+                </p>
             </div>
         </a>
-            
-        <a href=""><div class="dog-item">
-                <img src="/static/img/bulldog.jpg" alt="Dog 2">
-                <p>Bulldog</p>
-            </div>
-        </a>
-            
-            <a href=""><div class="dog-item">
-                <img src="/static/img/germanshepherd.jpg" alt="Dog 3">
-                <p>German Shepherd</p>
-            </div>
-        </a>
-            
-            <a href=""><div class="dog-item">
-                <img src="/static/img/bassethound.jpg" alt="Dog 3">
-                <p>German Shepherd</p>
-            </div>
-        </a>
-            
-            <a href=""> <div class="dog-item">
-                <img src="/static/img/bassethound.jpg" alt="Dog 3">
-                <p>German Shepherd</p>
-            </div>
-        </a>
-            
-
+        {%endfor %}
+        {%endif%}
         </section>
     </div>
     {% endblock %}

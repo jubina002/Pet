@@ -18,6 +18,7 @@
 
         .dogMain {
             display: flex;
+            justify-content: space-between;
         }
 
         .alldogs .warper {
@@ -43,6 +44,7 @@
         }
         .dog_detail{
             display: flex;
+            flex:1;
             flex-direction: column;
             align-items: center;
             background-color: #0007;
@@ -134,57 +136,36 @@
         <div class="dogMain">
             <div class="dog_detail">
                 <div class="dog_title">
-                   <span>Poo</span>
+                   <span>{{context.dog.name}}</span>
                 </div>
                 <div class="dog_inner_detail">
                     
-                    <div class="inner_detail">Breed:<span> Miniature Poodle</span> </div>
-                    <div class="inner_detail">Age:<span> 7 years</span></div>
-                    <div class="inner_detail">Height:<span> 11 inches</span></div>
-                    <div class="inner_detail">Weight:<span> 12 pounds</span></div>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi similique recusandae labore
-                        blanditiis aperiam, dolor tenetur quod dignissimos, cupiditate laborum voluptates tempora unde.
-                        Porro ex tenetur facere et a rerum.</p>
+                    <div class="inner_detail">Breed:<span> {{context.dog.breed}}</span> </div>
+                    <div class="inner_detail">Age:<span> {{context.dog.age}}years</span></div>
+                    <div class="inner_detail">Height:<span> {{context.dog.height}}</span></div>
+                    <div class="inner_detail">Weight:<span> {{context.dog.weight}}</span></div>
+                    <p>{{context.dog.desc}}</p>
                 </div>
             </div>
             <div class="dog_image">
-                <img src="/static/img/poodle.jpg" alt="">
+                <img src={{context.dog.image}} alt="">
             </div>
         </div>
 
         <div class="alldogs">
             <section id="feature" class="section-p1">
-                <a href=""><div class="dog-item">
-                    <img src="/static/img/bassethound.jpg" alt="Dog 1">
-                    <p>Basset Hound</p>
-                </div>
-            </a>
-                
-            <a href=""><div class="dog-item">
-                    <img src="/static/img/bulldog.jpg" alt="Dog 2">
-                    <p>Bulldog</p>
-                </div>
-            </a>
-                
-                <a href=""><div class="dog-item">
-                    <img src="/static/img/germanshepherd.jpg" alt="Dog 3">
-                    <p>German Shepherd</p>
-                </div>
-            </a>
-                
-                <a href=""><div class="dog-item">
-                    <img src="/static/img/bassethound.jpg" alt="Dog 3">
-                    <p>German Shepherd</p>
-                </div>
-            </a>
-                
-                <a href=""> <div class="dog-item">
-                    <img src="/static/img/bassethound.jpg" alt="Dog 3">
-                    <p>German Shepherd</p>
-                </div>
-            </a>
-                
-    
+                {% if context %}
+            {% for dog in context.dogs %}
+            <a href="/adopt/{{dog._id}}">
+                <div class="dog-item">
+                <img src="/static/img/bassethound.jpg" alt="Dog 1">
+                <p>
+                {{dog.name}}
+                </p>
+            </div>
+        </a>
+        {%endfor %}
+        {%endif%}
             </section>
             <div class="seemore">
                 <h2>See More</h2>
