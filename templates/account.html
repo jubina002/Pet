@@ -7,11 +7,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login Page</title>
     <link rel="stylesheet" href="/static/css/style.css">
+    <link rel="stylesheet" href="/static/css/navbar.css">
     {%endblock%}
 </head>
 
 <body>
+
     {%block body%}
+    <bodyy>
     <div class="login-container">
         <h2>Login</h2>
         <form action="/login" method="POST">
@@ -27,6 +30,7 @@
             <p>Don't have an account? <a href="#">SignUp</a></p>
         </div>
     </div>
+    </bodyy>
     {%endblock%}
 </body>
 </html>
