@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
-
+{% extends "base.html" %}
 <head>
+    {% block head %}
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home Page</title>
@@ -86,6 +87,7 @@
             box-shadow: 0px 0px 20px 6px #10101085;
             border-radius: 7px;
             text-align: center;
+            color:white;
         }
 
         .text-container {
@@ -99,16 +101,14 @@
             text-decoration: none;
         }
     </style>
+
+    {% endblock %}
 </head>
 
 <body>
-    <nav>
-        <a href="home.html" class="active">Home</a>
-        <a href="/adopt">Adopt</a>
-        <a href="/sell">Sell</a>
-        <a href="/about">About</a>
-        <a href="/login.html">Login</a>
-    </nav>
+    
+    {{super()}}
+    {% block body %}
     <div class="container">
         <div class="main-content">
             <div class="text-container">
@@ -162,6 +162,7 @@
 
         </section>
     </div>
+    {% endblock %}
 </body>
 
 </html>

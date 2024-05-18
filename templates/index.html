@@ -1,15 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
+    {% extends "base.html" %}
 <head>
+    {%block head %}
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pet</title>
     <link rel="stylesheet" href="/static/css/navbar.css" type="text/css" >
     <style src=""></style>
+    {%endblock%}
 </head>
 <body>
-    {% extends "navbar.html" %}
     {{super()}}
-    
+    {%block body%}
+    {%endblock%}
 </body>
 </html>

@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 
+    {% extends "base.html" %}
 <head>
+    {% block head%}
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Us</title>
@@ -169,16 +171,13 @@
             font-size: 40px;
         }
     </style>
+    {% endblock %}
 </head>
 
 <body>
-    <nav>
-        <a href="home.html" class="active">Home</a>
-        <a href="adopt.html">Adopt</a>
-        <a href="/sell">Sell</a>
-        <a href="/about">About</a>
-        <a href="/login.html">Login</a>
-    </nav>
+    
+    {{super()}}
+{% block body%}
     <div class="container">
         <div class="after-navbar">
             <div class="map">
@@ -214,48 +213,56 @@
             <div class="leftarrow">
                 <i class="fa fa-arrow-left"></i>
             </div>
-            <figure class="snip1390">
-                <img src="/static/img/bassethound.jpg" alt="profile-sample3" class="profile" />
-                <figcaption>
-                    <!-- <h2>Eleanor Crisp</h2>
-                    <h4>UX Design</h4> -->
-                    <blockquote>Dad buried in landslide! Jubilant throngs fill streets! Stunned father inconsolable
-                        -
-                        demands
-                        recount!</blockquote>
-                </figcaption>
-            </figure>
-            <figure class="snip1390">
-                <img src="/static/img/bassethound.jpg" alt="profile-sample3" class="profile" />
-                <figcaption>
-                    <!-- <h2>Eleanor Crisp</h2>
-                    <h4>UX Design</h4> -->
-                    <blockquote>Dad buried in landslide! Jubilant throngs fill streets! Stunned father inconsolable
-                        -
-                        demands
-                        recount!</blockquote>
-                </figcaption>
-            </figure>
-            <figure class="snip1390">
-                <img src="/static/img/bassethound.jpg" alt="profile-sample3" class="profile" />
-                <figcaption>
-                    <!-- <h2>Eleanor Crisp</h2>
-                    <h4>UX Design</h4> -->
-                    <blockquote>Dad buried in landslide! Jubilant throngs fill streets! Stunned father inconsolable
-                        -
-                        demands
-                        recount!</blockquote>
-                </figcaption>
-            </figure>
-            <div class="rightarrow">
+                       <div class="rightarrow">
                 <i class="fa fa-arrow-right"></i>
             </div>
         </div>
     </div>
     <script>
-        
-    </script>
+    let cur_index = 0
+    let leftarrow = document.querySelector(".leftarrow");
+    let rightarrow = document.querySelector(".rightarrow");
+    let testomoy = `<img src="{img}" alt="profile-sample3" class="profile" />
+                <figcaption>
+                    <blockquote>{quote}</blockquote>
+                </figcaption>`;
+    let parent = document.querySelector('.testimonial')         
+    let testomonies = [];
+    for (var i = 0; i <10; i++) {
+        let elm =  document.createElement("figure")
+        elm.className="snip1390"
+        elm.innerHTML = testomoy.replace("{img}","/static/img/bassethound.jpg").replace('{quote}',`hello${i}`);
+        testomonies.push(elm)
+    }
 
+
+  rightarrow.addEventListener("click",()=>{
+        let poped = testomonies.shift()
+        testomonies.push(poped)
+        update()
+    })
+
+    
+      leftarrow.addEventListener("click",()=>{
+        let poped = testomonies.pop()
+        testomonies.unshift(poped)
+        update()
+    
+    })
+
+    let update = ()=>{
+        parent.innerHTML = '';
+        parent.appendChild(leftarrow)
+        for (var i = 0; i <3; i++) {
+            parent.appendChild(testomonies[i])
+        }
+        parent.appendChild(rightarrow)
+    }
+    update()
+
+
+    </script>
+{%endblock%}
 </body>
 
 </html>
