@@ -85,7 +85,7 @@ def get_dogs(count:int=-1):
                 "age": age,
                 "height": height,
                 "weight": weight,
-                "iamge": image,
+                'image': image,
                 "desc": description,
             }
             for (
@@ -150,6 +150,10 @@ def adopt(_id:str):
     return render_template("adopt.html",context={"dog":main_dog,"dogs":limited_dogs })
 
 
+@app.route("/adopt")
+def my_adopt():
+    return adopt("1")
+
 @app.route("/sell",methods=["POST","GET"])
 def sell():
     if request.method == "POST":
@@ -166,7 +170,7 @@ def sell():
         iamge_name = iamge_name.hexdigest()
         iamge_name = f"static/img/{iamge_name}.png"
         with open(iamge_name,"wb") as fp:
-            fp.write(img.tobytes())# type:ignore[reportUnknownMemberType]
+            img.save(fp)# type:ignore[reportUnknownMemberType]
         description= request.form["description"] 
         _ =cursor.execute(
         """
@@ -175,7 +179,7 @@ def sell():
     """,
         (name, breed, age, height, weight, iamge_name, description),
     )   
-
+        
         conn.commit()
         conn.close()
         return render_template("sell.html")

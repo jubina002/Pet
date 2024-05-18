@@ -148,7 +148,7 @@
                 </div>
             </div>
             <div class="dog_image">
-                <img src={{context.dog.image}} alt="">
+                <img src="/{{context.dog.image}}" alt="">
             </div>
         </div>
 
@@ -158,7 +158,7 @@
             {% for dog in context.dogs %}
             <a href="/adopt/{{dog._id}}">
                 <div class="dog-item">
-                <img src="/static/img/bassethound.jpg" alt="Dog 1">
+                <img src="/{{dog.image}}" alt="Dog 1">
                 <p>
                 {{dog.name}}
                 </p>

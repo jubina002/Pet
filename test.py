@@ -13,7 +13,7 @@ fake_dogs = [
         "3 years",
         "24 inches",
         "65 lbs",
-        f"static/img/{iamge_name}.png",
+        f"static/img/{iamge_name}",
         "Friendly and energetic, loves to play fetch.",
     ),
     (
@@ -22,7 +22,7 @@ fake_dogs = [
         "4 years",
         "26 inches",
         "75 lbs",
-        f"static/img/{iamge_name}.png",
+        f"static/img/{iamge_name}",
         "Loyal and protective, great with families.",
     ),
     (
@@ -31,7 +31,7 @@ fake_dogs = [
         "2 years",
         "22 inches",
         "60 lbs",
-        f"static/img/{iamge_name}.png",
+        f"static/img/{iamge_name}",
         "Gentle and affectionate, enjoys swimming.",
     ),
     (
@@ -40,7 +40,7 @@ fake_dogs = [
         "5 years",
         "15 inches",
         "30 lbs",
-        f"static/img/{iamge_name}.png",
+        f"static/img/{iamge_name}",
         "Curious and playful, loves to explore.",
     ),
     (
@@ -49,7 +49,7 @@ fake_dogs = [
         "6 years",
         "14 inches",
         "50 lbs",
-        f"static/img/{iamge_name}.png",
+        f"static/img/{iamge_name}",
         "Calm and loving, great with children.",
     ),
     (
@@ -58,7 +58,7 @@ fake_dogs = [
         "3 years",
         "23 inches",
         "70 lbs",
-        f"static/img/{iamge_name}.png",
+        f"static/img/{iamge_name}",
         "Energetic and strong, needs plenty of exercise.",
     ),
     (
@@ -67,7 +67,7 @@ fake_dogs = [
         "4 years",
         "18 inches",
         "40 lbs",
-        f"static/img/{iamge_name}.png",
+        f"static/img/{iamge_name}",
         "Intelligent and friendly, easy to train.",
     ),
     (
@@ -76,7 +76,7 @@ fake_dogs = [
         "2 years",
         "8 inches",
         "6 lbs",
-        f"static/img/{iamge_name}.png",
+        f"static/img/{iamge_name}",
         "Small and sassy, loves to cuddle.",
     ),
     (
@@ -85,7 +85,7 @@ fake_dogs = [
         "5 years",
         "9 inches",
         "16 lbs",
-        f"static/img/{iamge_name}.png",
+        f"static/img/{iamge_name}",
         "Curious and lively, loves to dig.",
     ),
     (
@@ -94,7 +94,7 @@ fake_dogs = [
         "3 years",
         "25 inches",
         "85 lbs",
-        f"static/img/{iamge_name}.png",
+        f"static/img/{iamge_name}",
         "Protective and confident, great guard dog.",
     ),
     (
@@ -103,7 +103,7 @@ fake_dogs = [
         "4 years",
         "11 inches",
         "12 lbs",
-        f"static/img/{iamge_name}.png",
+        f"static/img/{iamge_name}",
         "Affectionate and alert, loves attention.",
     ),
     (
@@ -112,7 +112,7 @@ fake_dogs = [
         "3 years",
         "22 inches",
         "55 lbs",
-        f"static/img/{iamge_name}.png",
+        f"static/img/{iamge_name}",
         "Energetic and mischievous, loves to run.",
     ),
 ]
