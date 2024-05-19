@@ -187,9 +187,17 @@ def sell():
 
         return render_template("sell.html")
 
+@app.route("/seemore/<page>")
+def seemore(page:str):
+    page_int = 1
+    if page.isdigit():
+        page_int = int(page)
+    all_dogs = get_dogs()
+    return render_template("seemore.html",context={"dogs":all_dogs[(page_int-1)*10:page_int*10]})
+
 
 @app.route("/seemore")
-def seemore():
+def aseemore():
     return render_template("seemore.html",context={"dogs":get_dogs(count=10)})
 
 
