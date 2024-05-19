@@ -2,3 +2,6 @@
 pet
 __pycache__
 pyproject.toml
+# ignore env files
+Lib
+Scripts
