@@ -190,7 +190,7 @@ def sell():
 
 @app.route("/seemore")
 def seemore():
-    return render_template("seemore.html")
+    return render_template("seemore.html",context={"dogs":get_dogs(count=10)})
 
 
 @app.route("/login", methods=["POST", "GET"])
@@ -232,5 +232,4 @@ def logout():
 
 
 if __name__ == "__main__":
-    print(get_dogs())
     app.run()

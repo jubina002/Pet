@@ -54,15 +54,18 @@
             <input type="text" >
         </div>
         <div class="description">
+            {% if context %}
+            {% for dog in context.dogs %}
             <div class="n1">
-                <img src="/static/img/bassethound.jpg" alt="">
+                <p>
+                {{dog.name}}
+                </p>
+                <img src="/{{dog.image}}" alt="">
             </div>
-            <div class="n2">
-                <img src="/static/img/bassethound.jpg" alt="">
-            </div>
-            <div class="n3">
-                <img src="/static/img/bassethound.jpg" alt="">
-            </div>
+           
+        {%endfor %}
+        {%endif%}
+            
         </div>
         <div class="page">
             <section id="pagination" class="section-p1">
