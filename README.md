@@ -5,3 +5,17 @@ Objectives
 3. Users can also put their dog up for adoption and charge adoption fees to cover expenses associated with rescuing, caring for, and rehoming dogs.
 4. Provide transparency about the adoption process, fees, and policies.
 5. Review Page to share success stories and testimonials of adopted dogs and their new families. 
+
+# How to Run
+1. Install [python](https://www.python.org/downloads/).
+2. Install flask to your system.
+```bash
+python -m pip install flask
+```
+  you can also create virtual environment but it's not necessary
+3. Goto the `Pet` folder.
+3. run the code.
+```bash
+python ./pet.py
+```
+4. Now open ```localhost:5000``` in your browser.
