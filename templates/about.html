@@ -232,7 +232,7 @@
     dogs.forEach(x=>{
         let elm =  document.createElement("figure")
         elm.className="snip1390"
-        elm.innerHTML = testomoy.replace("{img}","/static/img/bassethound.jpg").replace('{quote}',`[${x.name}] ${x.desc}`);
+        elm.innerHTML = testomoy.replace("{img}",`${x.image}`).replace('{quote}',`[${x.name}] ${x.desc}`);
         testomonies.push(elm)
     })
 
