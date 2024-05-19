@@ -12,7 +12,8 @@ Objectives
 ```bash
 python -m pip install flask
 ```
-  you can also create virtual environment but it's not necessary
+you can also create virtual environment but it's not necessary
+
 3. Goto the `Pet` folder.
 3. run the code.
 ```bash
